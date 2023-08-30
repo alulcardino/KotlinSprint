@@ -1,6 +1,6 @@
 package lesson_1
 
-class lesson1_task1 {
+fun main() {
     val countOfOrder: Int = 75
     val thanking: String = "Thank you for purchase"
 }
