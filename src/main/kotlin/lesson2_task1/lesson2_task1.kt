@@ -6,7 +6,7 @@ fun main() {
     val thirdStudentMark = 3
     val fourthStudentMark = 5
 
-    val averageMark = (firstStudentMark + secondStudentMark + thirdStudentMark + fourthStudentMark)/4.0
+    val averageMark = (firstStudentMark + secondStudentMark + thirdStudentMark + fourthStudentMark) / 4.0
 
     println(String.format("%.2f", averageMark))
 }
