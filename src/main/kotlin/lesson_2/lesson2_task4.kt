@@ -1,4 +1,4 @@
-package lesson2_task1
+package lesson_2
 
 fun main () {
 
