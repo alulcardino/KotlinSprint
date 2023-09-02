@@ -3,11 +3,10 @@ package lesson_3
 fun main() {
     val move = "D2-D4;0"
 
-    val from = move.substring(0,2)
-    val to = move.substring(3,5)
-    val numberOfMove = move.substring(6,7)
+    val splitedMove = move.split("-", ";")
 
-    println(from)
-    println(to)
-    println(numberOfMove)
+    println(splitedMove[0])
+    println(splitedMove[1])
+    println(splitedMove[2])
+
 }
