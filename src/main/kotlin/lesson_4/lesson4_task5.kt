@@ -18,10 +18,11 @@ fun main() {
     println("Is good weather?:")
     var isGoodWeather: Boolean = readLine().toBoolean()
 
-    println("Can ship go?: ${isDamaged == IS_DAMAGED 
+    println("Can ship go?: ${(isDamaged == IS_DAMAGED 
             && amountOfCrew >= AMOUNT_OF_CREW_MIN
-            && amountOfCrew <= AMOUNT_OF_CREW_MAX
-            && amountOfBoxes > AMOUNT_OF_BOXES_MIN
-            &&isGoodWeather == IS_GOOD_WEATHER}")
+            && amountOfCrew <= AMOUNT_OF_CREW_MAX) 
+            || (amountOfCrew == AMOUNT_OF_CREW_MAX
+            &&  isGoodWeather == IS_GOOD_WEATHER)
+            &&  amountOfBoxes > AMOUNT_OF_BOXES_MIN}")
 
 }
