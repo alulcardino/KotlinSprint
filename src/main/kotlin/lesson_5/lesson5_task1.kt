@@ -5,7 +5,6 @@ fun main() {
     val secondValue = 2;
     val trueAnswer = firstValue + secondValue
 
-
     println("5You need to solve to prove what you are human: $firstValue + $secondValue = ")
 
     val answer = readLine()?.toInt()
