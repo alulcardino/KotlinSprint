@@ -19,7 +19,8 @@ fun main() {
     if (userFirstNumber == firstNumber && userSecondNumber == secondNumber ||
         userSecondNumber == firstNumber && userFirstNumber == secondNumber)  {
         println("You win main prize")
-    } else if (userFirstNumber == firstNumber || userSecondNumber == secondNumber) {
+    } else if (userFirstNumber == firstNumber || userSecondNumber == secondNumber
+        || userSecondNumber == firstNumber || userFirstNumber == secondNumber) {
         println("You win second prize")
     } else {
         println("You lose")
