@@ -7,8 +7,8 @@ const val MAX = 100;
 
 fun main() {
 
-    val firstNumber = (MIN..MAX).random();
-    val secondNumber = (MIN..MAX).random();
+    val firstNumber = (MIN..MAX).random()
+    val secondNumber = (MIN..MAX).random()
 
     print("Enter first number: ")
     val userFirstNumber = readLine()?.toInt() ?: 0
