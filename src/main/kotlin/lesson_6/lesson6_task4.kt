@@ -9,17 +9,20 @@ fun main() {
     val rightNumber = (MIN..MAX).random()
     var userNumber: Int
     var countAttempt = 0;
+    var isWin = false;
     do {
         print("Введите свое число ")
         userNumber = readLine()?.toInt() ?: 0
         if (userNumber != rightNumber) {
             println("Неверно, осталось ${ATTEMPTS - countAttempt - 1} попыток")
+        } else {
+            isWin = true
         }
         countAttempt++
 
     } while (userNumber != rightNumber && countAttempt != ATTEMPTS)
 
-    if (countAttempt != ATTEMPTS) {
+    if (isWin) {
         println("Это была великолепная игра")
     } else {
         println("Вы проиграли")
