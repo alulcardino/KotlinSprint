@@ -8,8 +8,8 @@ fun main() {
 
     val rightNumber = (MIN..MAX).random()
     var userNumber: Int
-    var countAttempt = 0;
-    var isWin = false;
+    var countAttempt = 0
+    var isWin = false
     do {
         print("Введите свое число ")
         userNumber = readLine()?.toInt() ?: 0
