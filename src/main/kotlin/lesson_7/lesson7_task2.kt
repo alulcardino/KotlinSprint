@@ -6,17 +6,20 @@ const val MAX = 9999
 fun main() {
     var smsNumber: Int
     var userCode: Int
+    var isPassed = false
 
-    while (true) {
+    do {
         smsNumber = (MIN..MAX).random()
-        println("""Ваш код авторизации: $smsNumber
+        println(
+            """Ваш код авторизации: $smsNumber
             |Введите код: 
-        """.trimMargin())
+        """.trimMargin()
+        )
         userCode = readLine()?.toInt() ?: 0
         if (userCode == smsNumber) {
-            break
+            isPassed = true
         }
-    }
+    } while (isPassed)
 
     println("Добро пожаловать!")
 
