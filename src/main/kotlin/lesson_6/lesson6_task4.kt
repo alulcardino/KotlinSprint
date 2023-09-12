@@ -1,12 +1,12 @@
 package lesson_6
 
-const val MIN = 1
-const val MAX = 9
+
 const val ATTEMPTS = 5
 
 fun main() {
-
-    val rightNumber = (MIN..MAX).random()
+    val min = 1
+    val max = 9
+    val rightNumber = (min..max).random()
     var userNumber: Int
     var countAttempt = 0
     var isWin = false
