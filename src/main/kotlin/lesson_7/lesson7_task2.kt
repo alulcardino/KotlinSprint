@@ -6,7 +6,6 @@ const val MAX = 9999
 fun main() {
     var smsNumber: Int
     var userCode: Int
-    var isPassed = false
 
     do {
         smsNumber = (MIN..MAX).random()
@@ -16,10 +15,7 @@ fun main() {
         """.trimMargin()
         )
         userCode = readLine()?.toInt() ?: 0
-        if (userCode == smsNumber) {
-            isPassed = true
-        }
-    } while (isPassed)
+    } while (userCode != smsNumber)
 
     println("Добро пожаловать!")
 
