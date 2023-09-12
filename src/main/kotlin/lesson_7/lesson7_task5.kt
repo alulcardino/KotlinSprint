@@ -2,7 +2,7 @@ package lesson_7
 
 import kotlin.random.Random
 
-const val CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+val CHARACTERS = ('1'..'9') + ('a'..'z') + ('A'..'Z')
 
 
 fun main() {
@@ -11,7 +11,7 @@ fun main() {
     val password = StringBuilder("")
 
     for (i in 1..length) {
-        password.append(CHARACTERS[Random.nextInt(CHARACTERS.length)])
+        password.append(CHARACTERS[Random.nextInt(CHARACTERS.size)])
     }
 
     println("Your password is $password")
