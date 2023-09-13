@@ -1,7 +1,7 @@
 package lesson_8
 
 fun main() {
-    var recipe = arrayListOf("Egg", "Butter", "Apple", "Banana", "Milk", "Sugar")
+    var recipe = arrayOf("Egg", "Butter", "Apple", "Banana", "Milk", "Sugar")
 
     print("Enter ingredient: ")
     val userIngredient = readLine().toString()
