@@ -6,10 +6,10 @@ fun main() {
         "В рецепте есть базовые ингредиенты: $recipe." +
                 "\nЖелаете добавить еще?"
     )
-    val answer = readLine().toString()
-    if (answer == "да") {
+    val answer = readln()
+    if (answer.equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
-        val ingredient = readLine().toString()
+        val ingredient = readln()
         recipe.add(ingredient)
         println("Теперь в рецепте есть следующие ингредиенты: $recipe")
     }
