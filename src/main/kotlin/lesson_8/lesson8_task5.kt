@@ -1,16 +1,13 @@
 package lesson_8
 
-import com.sun.xml.internal.fastinfoset.util.StringArray
+import java.util.*
 
 fun main() {
     print("Enter amount of Ingredients: ")
     val amountOfIngredients =  readln().toInt() ?: 0
-    val ingredients = Array(amountOfIngredients) { ""}
-
-    for (i in ingredients.indices) {
+    val ingredients = Array(amountOfIngredients) {
         println("Enter ingredient: ")
-        val ingredient = readln()
-        ingredients[i] = ingredient
+        readln()
     }
-
+    println(ingredients.contentToString())
 }
