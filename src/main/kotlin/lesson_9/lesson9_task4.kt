@@ -2,8 +2,7 @@ package lesson_9
 
 fun main() {
     println("Enter 5 ingredients: ")
-    val ingredientsFromConsole = readln()
-    val ingredients = ingredientsFromConsole.split(",")
-    ingredients.sorted()
+    val ingredients = readln().split(",").toMutableList()
+    ingredients.sort()
     println(ingredients)
 }
