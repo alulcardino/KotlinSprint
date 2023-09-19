@@ -36,15 +36,14 @@ private fun validateLogin(string: String): Boolean = string.length > 4
 
 private fun generatePassword(): String {
     val numbers = ('1'..'9')
-    val symbols = "!" + "\"" + "#" +
-            "\\" + "$" + "%" + "&" + "\'" + "(" + ")" +
-            "*" + "+" + "," + "-" + "." + "/" + " "
+    val symbols = (' '.code..'/'.code)
+
     val password = StringBuilder("")
     for (i in 1..4) {
         if (i % 2 == 0) {
             password.append(numbers.random())
         } else {
-            password.append(symbols[Random.nextInt(symbols.length)])
+            password.append(symbols.random())
 
         }
     }
