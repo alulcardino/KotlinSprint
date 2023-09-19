@@ -4,7 +4,7 @@ fun main() {
     val user = User(123, "alulcardin", "qwerty", "@gmail.com")
     user.changePassword("qwerty")
     user.sendMessage("Hello")
-    println(user.toString())
+    println(user)
 }
 
 private class User(
