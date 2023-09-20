@@ -11,7 +11,7 @@ fun main() {
 
 fun generatePassword(length: Int): String {
     val numbers  = ('1'..'9')
-    val symbols = (' '.code..'/'.code)
+    val symbols = (' '.code..'/'.code).map { it.toChar() }
     val password = StringBuilder("")
     for (i in 1..length) {
         if (i % 2 == 0) {
