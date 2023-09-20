@@ -36,7 +36,7 @@ private fun validateLogin(string: String): Boolean = string.length > 4
 
 private fun generatePassword(): String {
     val numbers = ('1'..'9')
-    val symbols = (' '.code..'/'.code)
+    val symbols = (' '.code..'/'.code).map { it.toChar() }
 
     val password = StringBuilder("")
     for (i in 1..4) {
