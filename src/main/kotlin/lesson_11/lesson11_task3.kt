@@ -5,13 +5,14 @@ fun main() {
     val room1 =
         Room(
             "cover1", "name1",
-            listOf(Avatar(statuses[0]), Avatar(statuses[1]))
+            listOf(User(statuses[0]), User(statuses[1]))
         )
     val room2 =
         Room(
             "cover2", "name2",
-            listOf(Avatar(statuses[0]), Avatar(statuses[1]), Avatar(statuses[2]), Avatar(statuses[1]))
+            listOf(User(statuses[0]), User(statuses[1]), User(statuses[2]), User(statuses[1]))
         )
+
     println(room1)
     println(room2)
 }
@@ -20,17 +21,25 @@ fun main() {
 private class Room(
     private val cover: String,
     private val name: String,
-    private val listOfMembers: List<Avatar>,
+    private val listOfMembers: List<User>,
 ) {
     override fun toString(): String {
         return "Room(cover='$cover', name='$name', listOfMembers=$listOfMembers)"
     }
 }
 
-private class Avatar(
-    private val status: String
+private class User(
+    private val status: String,
+    private val avatar: String,
+    private val name: String
 ) {
-    override fun toString(): String {
-        return "Avatar(status='$status')"
+    fun longTapToAvatar() {
+        println(name)
     }
+
+    override fun toString(): String {
+        return "User(status='$status', avatar='$avatar', name='$name')"
+    }
+
+
 }
