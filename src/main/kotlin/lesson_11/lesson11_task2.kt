@@ -1,13 +1,13 @@
 package lesson_11
 
 fun main() {
-    val user = User(123, "alulcardin", "qwerty", "@gmail.com")
+    val user = User1(123, "alulcardin", "qwerty", "@gmail.com")
     user.changePassword("qwerty")
     user.sendMessage("Hello")
     println(user)
 }
 
-private class User(
+private class User1(
     private val id: Int,
     private val login: String,
     private var password: String,
