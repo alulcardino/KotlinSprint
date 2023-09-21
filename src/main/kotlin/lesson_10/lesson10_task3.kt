@@ -1,7 +1,6 @@
 package lesson_10
 
 import kotlin.random.Random
-
 fun main() {
     print("Enter length: ")
     val length = readln().toInt()
