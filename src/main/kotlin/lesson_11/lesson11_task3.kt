@@ -5,30 +5,24 @@ fun main() {
     val room1 =
         Room(
             "cover1", "name1",
-            listOf(User(statuses[0]), User(statuses[1]))
-        )
-    val room2 =
-        Room(
-            "cover2", "name2",
-            listOf(User(statuses[0]), User(statuses[1]), User(statuses[2]), User(statuses[1]))
+            listOf(User2(statuses[0], "avatar", "name"), User2(statuses[1], "avatar", "name"))
         )
 
     println(room1)
-    println(room2)
 }
 
 
 private class Room(
     private val cover: String,
     private val name: String,
-    private val listOfMembers: List<User>,
+    private val listOfMembers: List<User2>,
 ) {
     override fun toString(): String {
         return "Room(cover='$cover', name='$name', listOfMembers=$listOfMembers)"
     }
 }
 
-private class User(
+private class User2(
     private val status: String,
     private val avatar: String,
     private val name: String
