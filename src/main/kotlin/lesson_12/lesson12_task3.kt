@@ -11,7 +11,7 @@ fun main() {
 
 }
 
-class Weather1(
+class Weather2(
     private var weatherNight: Int,
     private var weatherDay: Int,
     private var isRain: Boolean,
