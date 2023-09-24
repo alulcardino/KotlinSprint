@@ -2,17 +2,15 @@ package lesson_11
 
 fun main() {
     val forum = Forum()
-    val user1 = User3(1, "name1", "123", "sae")
-    val user2 = User3(1, "name2", "123", "sae")
-    val user3 = User3(1, "name3", "123", "sae")
-    forum.createNewUser(user1)
-    forum.createNewUser(user2)
-    forum.createNewUser(user3)
-    forum.createNewMessage(1, "message1")
-    forum.createNewMessage(1, "message2")
-    forum.createNewMessage(2, "message3")
-    forum.createNewMessage(2, "message4")
-    forum.createNewMessage(3, "message5")
+
+    val user1 = forum.createNewUser( "name1", "123", "sae")
+    val user2 = forum.createNewUser( "name2", "123", "sae")
+    val user3 = forum.createNewUser( "name3", "123", "sae")
+    forum.createNewMessage(user1, "message1")
+    forum.createNewMessage(user1, "message2")
+    forum.createNewMessage(user2, "message3")
+    forum.createNewMessage(user2, "message4")
+    forum.createNewMessage(user3, "message5")
     forum.printThread()
 
 }
@@ -23,18 +21,18 @@ private class Forum() {
     private var id: Int = 0
 
     fun createNewUser(
-        user: User3
+        login: String, password: String, email: String
     ): User3 {
         id++
-        val newUser = User3(id, user.login, user.password, user.email)
+        val newUser = User3(id, login, password, email)
         listOfUsers.add(newUser)
-        return newUser
+        return User3(id, login, password, email)
     }
 
     fun createNewMessage(
-        authorId: Int, message: String
+        user: User3, message: String
     ) {
-        val author =  listOfUsers.first { it.id == authorId }
+        val author = listOfUsers.first { it.id == user.id }
         author.sendMessage(message)
         threadOfMessages.add("${author.login} : $message")
     }
@@ -47,10 +45,10 @@ private class Forum() {
 }
 
 private class User3(
-     var id: Int,
-     val login: String,
-     var password: String,
-     val email: String
+    var id: Int,
+    val login: String,
+    var password: String,
+    val email: String
 ) {
     private var bio: String = ""
 
