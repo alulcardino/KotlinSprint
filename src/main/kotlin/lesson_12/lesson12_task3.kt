@@ -12,13 +12,11 @@ fun main() {
 }
 
 class Weather2(
-    private var weatherNight: Int,
-    private var weatherDay: Int,
-    private var isRain: Boolean,
-    private var pressure: Int
+    private val weatherNight: Int,
+    private val weatherDay: Int,
+    private val isRain: Boolean,
+    private val pressure: Int,
 ) {
-
-
     override fun toString(): String {
         return "Weather(weatherNight=$weatherNight, weatherDay=$weatherDay," +
                 " isRain=$isRain, pressure=$pressure)"
