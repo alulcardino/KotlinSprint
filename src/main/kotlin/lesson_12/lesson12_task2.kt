@@ -11,14 +11,16 @@ fun main() {
 
 }
 
-class Weather1 constructor(
-    _weatherNight: Int, _weatherDay: Int,
-    _isRain: Boolean, _pressure: Int
+class Weather1 (
+    _weatherNight: Int,
+    _weatherDay: Int,
+    _isRain: Boolean,
+    _pressure: Int
 ) {
-    var weatherNight: Int = _weatherNight
-    var weatherDay: Int = _weatherDay
-    var isRain: Boolean = _isRain
-    var pressure: Int = _pressure
+    private val weatherNight: Int = _weatherNight
+    private val weatherDay: Int = _weatherDay
+    private val isRain: Boolean = _isRain
+    private val pressure: Int = _pressure
 
     override fun toString(): String {
         return "Weather(weatherNight=$weatherNight, weatherDay=$weatherDay," +
