@@ -8,7 +8,7 @@ fun main() {
     println(contact2)
 }
 
-class Contact(
+class Contact1(
     private val name: String,
     private val phone: Long,
     private val company: String?,
