@@ -4,45 +4,47 @@ fun main() {
     val pressureDiapason = (700..800)
     val weatherDiapason = (10..30)
     val list = mutableListOf<Weather4>()
+    val listOfDayTemp = mutableListOf<Int>()
+    val listOfNightTemp = mutableListOf<Int>()
+    val listOfRainDay = mutableListOf<Boolean>()
+    val listOfPressure = mutableListOf<Int>()
+
     for (i in 0..9) {
+        val dayTemp = weatherDiapason.random()
+        val nightTemp = weatherDiapason.random()
+        val rainDay = i % 2 == 0
+        val pressure = pressureDiapason.random()
+
+        listOfDayTemp.add(dayTemp)
+        listOfNightTemp.add(nightTemp)
+        listOfRainDay.add(rainDay)
+        listOfPressure.add(pressure)
+
         list.add(
             Weather4(
-                weatherDiapason.random(),
-                weatherDiapason.random(),
-                i % 2 == 0,
-                pressureDiapason.random()
+                dayTemp,
+                nightTemp,
+                rainDay,
+                pressure,
             )
         )
     }
-    var averageTempDay  = 0.0
-    var averageTempNight = 0.0
-    var averageTemp = 0.0
-    var rainDay = 0
-    var averagePressure = 0.0
 
-    list.forEach {
-        averageTempDay += it.weatherDay
-        averageTempNight += it.weatherNight
-        if (it.isRain) {
-            rainDay++
-        }
-        averagePressure += it.pressure
-    }
-
-    averageTemp = (averageTempDay + averageTempNight) / 20
-    averagePressure /= 10
-    println("""
-        average temp = $averageTemp
-        average pressure = $averagePressure
-        rain days = $rainDay
-    """.trimIndent())
+    println(
+        """
+        average temp day = ${listOfDayTemp.average()}
+        average temp night = ${listOfNightTemp.average()}
+        average pressure = ${listOfPressure.average()}
+        rain days = ${listOfRainDay.filter { it }.size}
+    """.trimIndent()
+    )
 }
 
 class Weather4(
-     var weatherNight: Int,
-     var weatherDay: Int,
-     var isRain: Boolean,
-     var pressure: Int
+    var weatherNight: Int,
+    var weatherDay: Int,
+    var isRain: Boolean,
+    var pressure: Int
 ) {
 
     init {
