@@ -16,6 +16,8 @@ fun main() {
             isNull(company)
             if (phone != "") {
                 contacts.add(Contact2(name, phone.toLong(), company))
+            } else {
+                println("Пустой номер!")
             }
         }
     } while (answer.equals("да", ignoreCase = true))
