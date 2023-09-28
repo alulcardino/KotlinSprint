@@ -7,17 +7,13 @@ fun main() {
         val answer = readln()
         if (answer.equals("да", ignoreCase = true)) {
             println("Введите Имя: ")
-            var name: String? = readln()
-            if (name == "") {
-                name = null
-            }
+            val name: String = readln()
+            isNull(name)
             println("Введите Номер: ")
             val phone = readln()
             println("Введите Компанию: ")
-            var company: String? = readln()
-            if (company == "") {
-                company = null
-            }
+            val company: String = readln()
+            isNull(company)
             if (phone != "") {
                 contacts.add(Contact2(name, phone.toLong(), company))
             }
@@ -28,6 +24,8 @@ fun main() {
         println(it)
     }
 }
+
+fun isNull(str : String) = str.ifEmpty { null }
 
 class Contact2(
     private val name: String?,
