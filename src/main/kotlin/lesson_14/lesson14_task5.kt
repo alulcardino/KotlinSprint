@@ -1,41 +1,27 @@
 package lesson_14
 
+import kotlin.math.PI
+import kotlin.math.floor
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-const val PI = 3.14
+const val RED = "RED"
+const val BLACK = "BLACK"
+const val GREEN = "GREEN"
 
 fun main() {
-    val circle1 = Circle("red", 12.0, 4.0)
-    val circle2 = Circle("black", 17.0, 10.0)
-    val rectangle1 = Rectangle("green", 10.0, 4.0)
-    val rectangle2 = Rectangle("black", 12.0, 8.0)
-    val triangle1 = Triangle("red", 4.0, 5.0, 3.0)
-    val triangle2 = Triangle("green", 8.0, 10.0, 6.0)
+    val circle1 = Circle(RED, 12.0, 4.0)
+    val circle2 = Circle(BLACK, 17.0, 10.0)
+    val rectangle1 = Rectangle(GREEN, 10.0, 4.0)
+    val rectangle2 = Rectangle(BLACK, 12.0, 8.0)
+    val triangle1 = Triangle(RED, 4.0, 5.0, 3.0)
+    val triangle2 = Triangle(GREEN, 8.0, 10.0, 6.0)
 
-    val listOfFigures = listOf(circle1, circle2, rectangle1, rectangle2, triangle1, triangle2)
-    println("Perimeters = ${getRedPerimeters(listOfFigures)}")
-    println("Square = ${getRedSquare(listOfFigures)}")
-}
-
-fun getRedPerimeters(listOfFigures : List<Figure>): Double {
-    var sum = 0.0
-    for (figure in listOfFigures) {
-        if (figure.getColor() == "red") {
-            sum+= figure.getPerimeter()
-        }
-    }
-    return sum
-}
-
-fun getRedSquare(listOfFigures : List<Figure>): Double {
-    var sum = 0.0
-    for (figure in listOfFigures) {
-        if (figure.getColor() == "red") {
-            sum += figure.getSquare()
-        }
-    }
-    return sum
+    val listOfFigures =
+        listOf(circle1, circle2, rectangle1, rectangle2, triangle1, triangle2)
+            .filter { it.getColor() == RED }
+    println("Perimeters = ${listOfFigures.sumOf { it.getPerimeter() }}")
+    println("Square = ${listOfFigures.sumOf { it.getSquare() }}")
 }
 
 abstract class Figure(
@@ -56,7 +42,7 @@ class Circle(
 ) : Figure(color) {
     override fun getPerimeter() = length
 
-    override fun getSquare() = PI * radius.pow(2)
+    override fun getSquare() = floor((PI * radius.pow(2)) * 100) / 100
 }
 
 class Rectangle(
