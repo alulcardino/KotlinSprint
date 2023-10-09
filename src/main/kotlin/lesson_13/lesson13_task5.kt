@@ -1,7 +1,7 @@
 package lesson_13
 
 fun main() {
-    val contacts = mutableListOf<Contact2>()
+    val contacts = mutableListOf<Contact4>()
     do {
         println("Если хотите добавить новую запись, введите “да”")
         val answer = readln()
@@ -13,7 +13,7 @@ fun main() {
             println("Введите Компанию: ")
             val company = readln().ifEmpty { null }
             if (phone != null) {
-                contacts.add(Contact2(name, phone, company))
+                contacts.add(Contact4(name, phone, company))
             } else {
                 println("Hомер может содержать только цифры")
             }
@@ -25,7 +25,7 @@ fun main() {
     }
 }
 
-class Contact2(
+class Contact4(
     private val name: String?,
     private val phone: Long?,
     private val company: String?,
