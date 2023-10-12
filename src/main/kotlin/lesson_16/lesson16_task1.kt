@@ -1,11 +1,12 @@
 package lesson_16
 
+import kotlin.math.pow
+
 fun main() {
     val dice = Dice()
     dice.getNumber()
     dice.getNumber()
     dice.getNumber()
-
 }
 
 
