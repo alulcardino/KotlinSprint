@@ -12,11 +12,13 @@ fun main() {
 class Circle(
     private val radius: Double,
 ) {
-    private val pi: Double = 3.14
+    companion object {
+        private const val PI: Double = 3.14
+    }
 
-    fun getLength() = 2 * pi * radius
+    private fun getLength() = 2 * PI * radius
 
-    fun getSquare() = pi * radius.pow(2)
+    private fun getSquare() = PI * radius.pow(2)
     override fun toString(): String {
         return "Circle(Length=${getLength()}, Square=${getSquare()})"
     }
