@@ -2,27 +2,27 @@ package lesson_17
 
 
 fun main() {
-    val quiz = Quiz("question", "answer")
+    val quiz = Quiz()
     println(quiz)
-    quiz.setAnswer("answer1")
-    quiz.setQuestion("question1")
-    println(quiz.getAnswer())
+    quiz.answer = "answer1"
+    quiz.question = "question1"
+    println(quiz.answer)
+    println(quiz.question)
     println(quiz)
 }
 
-class Quiz(
-    private var question: String,
-    private var answer: String,
-) {
-    fun setQuestion(question: String) {
-        this.question = question
-    }
+class Quiz() {
+     var question: String = ""
+        get() = field
+        set(value) {
+            field = value
+        }
 
-    fun setAnswer(answer: String) {
-        this.answer = answer
-    }
-
-    fun getAnswer() = answer
+     var answer: String = ""
+        get() = field
+        set(value) {
+            field = value
+        }
 
     override fun toString(): String {
         return "Quiz(question='$question', answer='$answer')"
