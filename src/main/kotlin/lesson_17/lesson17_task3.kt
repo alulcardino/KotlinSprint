@@ -9,30 +9,32 @@ fun main() {
     println(folder)
     folder.isHide = true
     println(folder)
-
-
+    println(folder.countOfFiles)
+    println(folder.name)
 }
 
 class Folder() {
     var name = ""
-        get() = field
-        set(value) {
-            field = value
+        get() {
+            return if (isHide) {
+                "Folder is hidden"
+            } else {
+                field
+            }
         }
 
     var countOfFiles = 0
-        get() = field
-        set(value) {
-            field = value
+        get()  {
+            return if (isHide) {
+                0
+            } else {
+                field
+            }
         }
 
     var isHide = false
         get() = field
         set(value) {
-            if (value) {
-                name = "Folder is hidden"
-                countOfFiles = 0
-            }
             field = value
         }
 
