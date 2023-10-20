@@ -36,6 +36,4 @@ class Player(
     override fun toString(): String {
         return "Player(name='$name', power=$power, health=$health)"
     }
-
-
 }
