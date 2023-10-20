@@ -2,27 +2,16 @@ package lesson_17
 
 
 fun main() {
-    val ship = Ship()
-    ship.speed = 10
-    ship.port = "Port"
+    val ship = Ship(10, "Port")
     ship.name = "Name"
     println(ship)
 }
 
 class Ship(
-
+    private val speed: Int,
+    private val port: String,
 ) {
     var name = ""
-        get() = field
-        set(value) {
-            println("Can not rename")
-        }
-    var speed = 0
-        get() = field
-        set(value) {
-            field = value
-        }
-    var port = ""
         get() = field
         set(value) {
             field = value
