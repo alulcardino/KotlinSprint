@@ -2,7 +2,7 @@ package lesson_17
 
 
 fun main() {
-    val package1 = Package(123)
+    val package1 = Package(123, "location1")
     package1.location = "location1"
     package1.location = "location2"
     package1.location = "location3"
@@ -12,11 +12,11 @@ fun main() {
 
 class Package(
     private val number: Int,
+    location: String,
 ) {
     var countOfMove = 0
-        get() = field
 
-    var location = ""
+    var location: String = location
         get() = field
         set(value) {
             countOfMove++
