@@ -2,7 +2,7 @@ package lesson_17
 
 
 fun main() {
-    val folder = Folder()
+    val folder = Folder("name", 4)
     folder.name = "name"
     folder.countOfFiles = 4
     folder.isHide = false
@@ -13,8 +13,11 @@ fun main() {
     println(folder.name)
 }
 
-class Folder() {
-    var name = ""
+class Folder(
+    initialName: String,
+    initialCountOfFiles: Int,
+) {
+    var name = initialName
         get() {
             return if (isHide) {
                 "Folder is hidden"
@@ -23,7 +26,7 @@ class Folder() {
             }
         }
 
-    var countOfFiles = 0
+    var countOfFiles = initialCountOfFiles
         get()  {
             return if (isHide) {
                 0
@@ -33,10 +36,6 @@ class Folder() {
         }
 
     var isHide = false
-        get() = field
-        set(value) {
-            field = value
-        }
 
     override fun toString(): String {
         return "Folder(name='$name', countOfFiles=$countOfFiles, isHide=$isHide)"
