@@ -4,6 +4,7 @@ package lesson_17
 fun main() {
     val ship = Ship(10, "Port")
     ship.name = "Name"
+    ship.name = "Name1"
     println(ship)
 }
 
@@ -14,7 +15,12 @@ class Ship(
     var name = ""
         get() = field
         set(value) {
-            field = value
+            if (name == "") {
+                field = value
+            } else {
+                println("You cant rename this")
+
+            }
         }
 
     override fun toString(): String {
