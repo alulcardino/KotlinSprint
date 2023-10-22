@@ -3,8 +3,6 @@ package lesson_17
 
 fun main() {
     val folder = Folder("name", 4)
-    folder.name = "name"
-    folder.countOfFiles = 4
     folder.isHide = false
     println(folder)
     folder.isHide = true
