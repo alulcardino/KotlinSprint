@@ -9,7 +9,7 @@ fun main() {
     dice8.printNumber()
 }
 
-open class Dice(
+abstract class Dice(
     private val number: Int
 ) {
     open fun printNumber() {
