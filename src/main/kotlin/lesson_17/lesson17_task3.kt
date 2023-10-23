@@ -39,5 +39,4 @@ class Folder(
         return "Folder(name='$name', countOfFiles=$countOfFiles, isHide=$isHide)"
     }
 
-
 }
