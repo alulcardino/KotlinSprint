@@ -1,6 +1,9 @@
 package lesson_19
 
 fun main() {
+    val spaceShip = SpaceShip()
+    spaceShip.todo2()
+    spaceShip.todo1()
 
 }
 
@@ -12,12 +15,12 @@ enum class Action{
 
 class SpaceShip() {
 
-    fun todo() {
+    fun todo1() {
         TODO()
     }
 
-    fun exception() {
-        throw NotImplementedError()
+    fun todo2() {
+        // TODO()
     }
 }
 
