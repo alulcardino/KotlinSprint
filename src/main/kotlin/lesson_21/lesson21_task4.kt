@@ -9,7 +9,7 @@ fun main() {
 
 fun File.writeToWord(word: Word) {
     this.writeText("")
-    this.appendText("${word.englishWord}|${word.russianWord}|${word.correctAnswersCount}\n")
+    this.appendText(("${word.englishWord}|${word.russianWord}|${word.correctAnswersCount}\n").lowercase())
 }
 
 data class Word(
