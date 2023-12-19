@@ -2,9 +2,8 @@ package lesson_22
 
 fun main() {
     val user = User7("name", "surname", 30)
-    val name = user.name
-    val surname = user.surname
-    val age = user.age
+
+    val (name, surname, age) = user
 
     println("$name $surname $age")
 }
