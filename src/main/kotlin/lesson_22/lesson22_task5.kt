@@ -17,10 +17,3 @@ data class GalacticGuide(
     val time: Date? = null,
     val placeDistance: Int = 0,
 )
-
-private fun dateFormatter() {
-
-}
-
-
-
